@@ -58,7 +58,7 @@ RSpec.describe 'Todos API', type: :request do
       # send json payload
       { title: 'Learn Elm', created_by: user.id.to_s }.to_json
     end
-    
+
     context 'when the request is valid' do
       before { post '/todos', params: valid_attributes, headers: headers }
 
@@ -81,7 +81,7 @@ RSpec.describe 'Todos API', type: :request do
 
       it 'returns a validation failure message' do
         expect(json['message'])
-          .to match(/Validation failed: Title can't be blank/)
+          .to match(/Validation failed: Title can't be blank/)      
       end
     end
   end
