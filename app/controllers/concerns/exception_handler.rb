@@ -1,7 +1,7 @@
 module ExceptionHandler
   # provides the more graceful `included` method
   extend ActiveSupport::Concern
-  
+
   # Define custom error subclasses - rescue catches `StandardErrors`
   class AuthenticationError < StandardError; end
   class MissingToken < StandardError; end
@@ -22,7 +22,7 @@ module ExceptionHandler
       json_response({ message: e.message }, :unprocessable_entity)
     end
   end
- 
+
   private
 
   # JSON response with message; Status code 422 - unprocessable entity
